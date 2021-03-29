@@ -19,10 +19,6 @@ const register = (component: PreLoadable & Partial<EnhancedPreLoadable>) => {
     };
     const { name } = enhancedComponent;
 
-    if (mapLoadable[name] !== undefined) {
-        throw new Error(`You try to add new component with already existing name: ${name}`);
-    }
-
     mapLoadable[name] = enhancedComponent;
 
     return optimized(name);
